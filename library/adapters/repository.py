@@ -30,3 +30,9 @@ class AbstractRepository(abc.ABC):
         """Returns Book with highest id from Repository"""
 
         raise NotImplementedError
+
+    def add_book(self, book: Book):
+        """adds a book to the Repository"""
+
+        raise NotImplementedError
+
