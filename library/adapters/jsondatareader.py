@@ -31,6 +31,7 @@ class BooksJSONReader:
                 authors_json.append(author_entry)
         return authors_json
 
+    """Put all books and authors into self.__dataset_of_books"""
 
     def read_json_files(self):
         authors_json = self.read_authors_file()
