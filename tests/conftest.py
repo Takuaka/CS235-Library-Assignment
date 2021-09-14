@@ -19,8 +19,8 @@ def in_memory_repo():
 @pytest.fixture
 def client():
     my_app = create_app({
-        # 'TESTING': True,
-        # 'TEST_DATA_PATH': TEST_DATA_PATH,
+         'TESTING': True,
+         'TEST_DATA_PATH': TEST_DATA_PATH,
         # 'WTF_CSRF_ENABLED': False
     })
 

@@ -33,7 +33,7 @@ from library.adapters.memory_repository import MemoryRepository, populate
     #
     # return app
 
-def create_app():
+def create_app(test_config=None):
     app = Flask(__name__)
 
     app.config.from_object('config.Config')
