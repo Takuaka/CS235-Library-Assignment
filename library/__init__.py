@@ -5,7 +5,7 @@ from pathlib import Path
 from flask import Flask
 
 import library.adapters.repository as repo
-from covid.adapters.memory_repository import MemoryRepository, populate
+from library.adapters.memory_repository import MemoryRepository, populate
 
 # TODO: Access to the books should be implemented via the repository pattern and using blueprints, so this can not stay here!
 #from library.domain.model import Book
