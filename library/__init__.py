@@ -1,9 +1,14 @@
 """Initialize Flask app."""
 
-from flask import Flask, render_template
+from pathlib import Path
+
+from flask import Flask
+
+import library.adapters.repository as repo
+from covid.adapters.memory_repository import MemoryRepository, populate
 
 # TODO: Access to the books should be implemented via the repository pattern and using blueprints, so this can not stay here!
-from library.domain.model import Book
+#from library.domain.model import Book
 
 # TODO: Access to the books should be implemented via the repository pattern and using blueprints, so this can not stay here!
 # def create_some_book():
@@ -31,3 +36,18 @@ from library.domain.model import Book
 def create_app():
     app = Flask(__name__)
 
+    app.config.from_object('config.Config')
+    data_path = Path('library') / 'adapters' / 'data'
+
+    if test_config is not None:
+        app.config.from_mapping(test_config)
+        data_path = app.config['TEST_DATA_PATH']
+
+    repo.repo_instance = MemoryRepository()
+    populate(data_path, repo.repo_instance)
+
+    with app.app_context():
+        from .home import home
+        app.register_blueprint (home.home_blueprint)
+
+    return app
