@@ -12,17 +12,11 @@ class MemoryRepository(AbstractRepository):
     def __init__(self):
         self.__books = list()
         self.__books_index = dict()
-        self.__books_keys = list()
-
-    @property
-    def book_keys(self):
-        return self.__books_keys
 
     def add_book(self, book: Book):
-        if book.book_id not in self.book_keys:
+        if book not in self.__books:
             insort_left(self.__books, book)
             self.__books_index[book.book_id] = book
-            insort_left(self.__books_keys, book.book_id)
 
     def get_book(self, book_id: int):
         book = None

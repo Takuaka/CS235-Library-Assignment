@@ -10,9 +10,8 @@ books_blueprint = Blueprint(
 
 @books_blueprint.route('/books_list', methods=['GET'])
 def books_list():
-    return render_template(
-        'books/books.html',
-        book_keys_list=services.book_keys_list(repo.repo_instance)
-    )
+    books_list = []
+    books_Keys_list = services.book_keys_list(repo.repo_instance)
+
 
 # "image_url is what the direct link to an image of the book is found; looks icon size
