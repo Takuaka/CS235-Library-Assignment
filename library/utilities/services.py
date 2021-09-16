@@ -1,6 +1,10 @@
 from typing import Iterable
 
-from library.domain.model import Book
+from library.domain.model import Publisher, Author, Book
+
+
+def book_keys_list(books: Iterable[Book]):
+    return [book.book_id for book in books]
 
 
 def book_to_dict(book: Book):
