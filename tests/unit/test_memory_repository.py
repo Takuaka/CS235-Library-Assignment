@@ -32,3 +32,7 @@ def test_repository_does_not_get_book_that_does_not_exist(in_memory_repo):
     book = in_memory_repo.get_book(4656)
     assert book is None
 
+
+def test_repository_collects_book_keys_correctly(in_memory_repo):
+    assert 5251 in in_memory_repo.book_keys
+    assert 4656 not in in_memory_repo.book_keys
