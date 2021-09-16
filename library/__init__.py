@@ -25,4 +25,7 @@ def create_app(test_config=None):
         from .home import home
         app.register_blueprint (home.home_blueprint)
 
+        from .books import books
+        app.register_blueprint (books.books_blueprint)
+
     return app

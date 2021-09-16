@@ -5,11 +5,11 @@ import library.adapters.repository as repo
 import library.books.services as services
 
 books_blueprint = Blueprint(
-    'books', __name__)
+    'books_bp', __name__)
 
 
-@books_blueprint.route('/books_list', methods=['GET'])
-def books_list():
+@books_blueprint.route('/books', methods=['GET'])
+def books():
     book_dict = services.get_books_dict(repo.repo_instance)
     keys_list = services.get_keys_list(repo.repo_instance)
     return render_template(

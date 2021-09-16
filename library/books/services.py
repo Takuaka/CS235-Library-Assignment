@@ -9,7 +9,11 @@ def get_keys_list(repo: AbstractRepository):
 
 
 def get_books_dict(repo: AbstractRepository):
-    return repo.get_books_dict()
+    services_books_dict = dict()
+    domain_books_dict = repo.get_books_dict()
+    for key in domain_books_dict.keys():
+        services_books_dict[key] = domain_books_dict[key].title
+    return services_books_dict
 
 
 def book_to_dict(book: Book):
