@@ -4,6 +4,14 @@ from library.domain.model import Publisher, Author, Book
 from library.adapters.repository import AbstractRepository
 
 
+def get_keys_list(repo: AbstractRepository):
+    return repo.get_books_keys_list()
+
+
+def get_books_dict(repo: AbstractRepository):
+    return repo.get_books_dict()
+
+
 def book_to_dict(book: Book):
     book_dict = {
         'book_id': book.book_id,

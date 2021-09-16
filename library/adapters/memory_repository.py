@@ -41,6 +41,12 @@ class MemoryRepository(AbstractRepository):
             book = self.__books[-1]
         return book
 
+    def get_books_keys_list(self):
+        return list(self.__books_index.keys())
+
+    def get_books_dict(self):
+        return self.__books_index
+
 
 def load_books(data_path: Path, repo: MemoryRepository):
     books_filename = str(data_path / "comic_books_excerpt.json")

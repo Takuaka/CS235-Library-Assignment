@@ -4,10 +4,11 @@
         <tr>
             <th>Book ID</th><th>Book Title</th>
         </tr>
-        {% for key in book_keys_list %}
+        {% for key in keys_list %}
         <tr>
-            <td></td>
+            <td>{{key}}</td><td>{{book_dict[key]}}</td>
         </tr>
+        {% endfor %}
     </table>
 </main>
 

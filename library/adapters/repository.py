@@ -35,3 +35,13 @@ class AbstractRepository(abc.ABC):
         """adds a book to the Repository"""
 
         raise NotImplementedError
+
+    def get_books_keys_list(self):
+        """Returns a list of all the book IDs of books in repo"""
+
+        raise NotImplementedError
+
+    def get_books_dict(self):
+        """Returns a dictionary of all the books in the repo"""
+
+        raise NotImplementedError

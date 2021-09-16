@@ -31,3 +31,9 @@ def test_repository_can_add_book(in_memory_repo):
 def test_repository_does_not_get_book_that_does_not_exist(in_memory_repo):
     book = in_memory_repo.get_book(4656)
     assert book is None
+
+
+def test_repository_returns_list_of_book_keys(in_memory_repo):
+    keys_list = in_memory_repo.get_books_keys_list()
+    assert 6431 in keys_list
+    assert 1153 in keys_list
