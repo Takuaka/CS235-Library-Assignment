@@ -36,3 +36,11 @@ class AbstractRepository(abc.ABC):
 
         raise NotImplementedError
 
+#______________________________________________________________________________________
+
+    @property
+    @abc.abstractmethod
+    def book_keys(self):
+        """This property contains a list of the book ids; I will use it to iterate over for the book list"""
+
+        raise NotImplementedError
