@@ -29,12 +29,27 @@ def get_books_dict(repo: AbstractRepository):
 
 
 def book_to_dict(book: Book):
+
+    authors = "Not available"
+    if len(book.authors) > 0:
+        authors = []
+        for author in book.authors:
+            authors.append(author.full_name)
+
+    page_num = "Not Available"
+    if book.num_pages is not None:
+        page_num = book.num_pages
+
+    publisher = "Not available"
+    if book.publisher != Publisher(""):
+        publisher = book.publisher.name
+
     book_dict = {
         'book_id': book.book_id,
         'title': book.title,
-        'authors': book.authors,
-        'page_num': book.num_pages,
-        'publisher': book.publisher,
+        'authors': authors,
+        'page_num': page_num,
+        'publisher': publisher,
         'is_ebook': book.ebook,
         'description': book.description
     }

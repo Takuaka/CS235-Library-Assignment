@@ -1,7 +1,24 @@
 {% extends 'layout.html' %} {% block content %}
 <main>
     <div class="book">
-
+        <h1>{{ title }}</h1>
+        <div id="other_info">
+            <p>Book ID: {{ book_id }}</p>
+            <p>Author(s): {{ authors }}</p>
+            <p>Publisher: {{ publisher }}</p>
+            {% if is_ebook == True %}
+            <p>Available as eBook</p>
+            {% else %}
+            <p>Not available as eBook</p>
+            {% endif %}
+            <p>Page number: {{ page_num }}</p>
+        </div>
+        <div id="Description">
+            <p>{{ description }}</p>
+        </div>
+        <div id="reviews">
+            <p>reviews placeholder</p>
+        </div>
     </div>
 </main>
 
