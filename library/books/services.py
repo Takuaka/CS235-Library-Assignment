@@ -4,8 +4,20 @@ from library.domain.model import Publisher, Author, Book
 from library.adapters.repository import AbstractRepository
 
 
+class NonExistentBookException(Exception):
+    pass
+
+
 def get_keys_list(repo: AbstractRepository):
     return repo.get_books_keys_list()
+
+
+def get_book(book_id: int, repo: AbstractRepository):
+    book = repo.get_book(book_id)
+    if book is None:
+        raise NonExistentBookException
+
+    return book_to_dict(book)
 
 
 def get_books_dict(repo: AbstractRepository):
@@ -21,7 +33,7 @@ def book_to_dict(book: Book):
         'book_id': book.book_id,
         'title': book.title,
         'authors': book.authors,
-        'page_number': book.num_pages,
+        'page_num': book.num_pages,
         'publisher': book.publisher,
         'is_ebook': book.ebook,
         'description': book.description

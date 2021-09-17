@@ -18,4 +18,23 @@ def books():
         keys_list=keys_list
     )
 
+
+@books_blueprint.route('/book_details/<book_id>')
+def book_details(book_id):
+    book = services.get_book(int(book_id), repo.repo_instance)
+
+    return render_template(
+        'books/book_reviews.html',
+        title=book['title'],
+        book_id=book['book_id'],
+        authors=book['authors'],
+        page_num=book['page_num'],
+        publisher=book['publisher'],
+        is_ebook=book['is_ebook'],
+        description=book['description']
+    )
+
+
+
+
 # "image_url is what the direct link to an image of the book is found; looks icon size
