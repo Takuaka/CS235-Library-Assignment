@@ -19,7 +19,7 @@ def books():
     )
 
 
-@books_blueprint.route('/book_details/<book_id>')
+@books_blueprint.route('/book_details/<book_id>', methods=['GET'])
 def book_details(book_id):
     book = services.get_book(int(book_id), repo.repo_instance)
 

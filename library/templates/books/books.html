@@ -7,9 +7,11 @@
         {% for key in keys_list %}
         <tr>
             <td>
-                {{key}}
+                <a href="{{url_for('books_bp.book_details',book_id=key)}}">{{key}}</a>
             </td>
-            <td>{{book_dict[key]}}</td>
+            <td>
+                <a href ="{{url_for('books_bp.book_details',book_id=key)}}">{{book_dict[key]}}</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
