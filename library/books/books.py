@@ -23,15 +23,29 @@ def books():
 def book_details(book_id):
     book = services.get_book(int(book_id), repo.repo_instance)
 
+    authors = ""
+    authors_num = len(book['authors'])
+    if authors_num > 1:
+        i = 0
+        while i < authors_num-1:
+            authors = authors + book['authors'][i] + ", "
+            i += 1
+        authors = authors + book['authors'][authors_num-1]
+    elif authors_num == 1:
+        authors = book['authors'][0]
+    else:
+        authors = "Not Available"
+
     return render_template(
         'books/book_reviews.html',
         title=book['title'],
         book_id=book['book_id'],
-        authors=book['authors'],
+        authors=authors,
         page_num=book['page_num'],
         publisher=book['publisher'],
         is_ebook=book['is_ebook'],
-        description=book['description']
+        description=book['description'],
+        authors_num=len(book['authors'])
     )
 
 
