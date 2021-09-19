@@ -42,6 +42,8 @@ Domain model for Users and Reviews is done and testing works for them, now need 
 
 Also might add dummy users and reviews for memory repo to populate: probably use the same layout as what's used to populate book and author data (list of JSON objects)
 
+I think a user adding a review will automatically add to number of pages read total from Book to User
+
 form wrappers and WTForms I think I'll need
 
 most of what I want I can see in CWA
