@@ -30,13 +30,12 @@ def get_books_dict(repo: AbstractRepository):
 
 def book_to_dict(book: Book):
 
-    authors = "Not available"
+    authors = []
     if len(book.authors) > 0:
-        authors = []
         for author in book.authors:
             authors.append(author.full_name)
 
-    page_num = "Not Available"
+    page_num = "Not available"
     if book.num_pages is not None:
         page_num = book.num_pages
 
