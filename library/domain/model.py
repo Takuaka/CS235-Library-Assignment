@@ -117,7 +117,6 @@ class Book:
         self.__ebook = None
         self.__num_pages = None
 
-
     @property
     def book_id(self) -> int:
         return self.__book_id
@@ -220,6 +219,8 @@ class Book:
     def __hash__(self):
         return hash(self.book_id)
 
+
+# "image_url is what the direct link to an image of the book is found; looks icon size
 
 class Review:
 

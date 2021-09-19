@@ -47,8 +47,3 @@ def book_details(book_id):
         description=book['description'],
         authors_num=len(book['authors'])
     )
-
-
-
-
-# "image_url is what the direct link to an image of the book is found; looks icon size
