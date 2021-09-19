@@ -15,7 +15,3 @@ def book_to_dict(book: Book):
         'description': book.description
     }
     return book_dict
-
-
-def books_to_dict(books: Iterable[Book]):
-    return [book_to_dict(book) for book in books]
