@@ -1,0 +1,57 @@
+Ok this has all my current ideas that I want to add:
+
+able to move between books in the books_details page
+
+able to go to first and last books in the books_details page
+
+styling
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ideas above require:
+
+buttons that act as hyperlinks (follow the articles page on CWA; use first/last_article_url for this)
+
+able to get the book_ids of the previous and next books in the books dict(use keys_list.index(prev_id/next_id) to generate URLs for the buttons)
+
+Might also have one for books list
+
+CSS
+
+_______________________________
+
+These ideas require more study of the CWA:
+
+Able to view books by authors
+
+adding Users
+
+adding Reviews
+
+Able to view reviews on book details tab
+
+Able to add reviews on the book details tab
+
+setting the max amount of books viewed in the book page (currently shows max which is 20; might leave at 20 or lower to 10 per books page)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Currently Authors are simply an attribute to Book class; need a separate place for them to stay in Memory Repo
+
+Domain model for Users and Reviews is done and testing works for them, now need to add them to Repository (Currently not in there) and add testing for them in Memory Repo
+
+Also might add dummy users and reviews for memory repo to populate: probably use the same layout as what's used to populate book and author data (list of JSON objects)
+
+form wrappers and WTForms I think I'll need
+
+most of what I want I can see in CWA
+
+______________________________
+
+Extras that I think of:
+
+Average Reviews per book
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+iterate through reviews and add all the ratings together, then divide by review number
