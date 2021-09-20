@@ -47,6 +47,9 @@ class MemoryRepository(AbstractRepository):
     def get_books_dict(self):
         return self.__books_index
 
+    def get_prev_next_books(self, book_id: int):
+        pass
+
 
 def load_books(data_path: Path, repo: MemoryRepository):
     books_filename = str(data_path / "comic_books_excerpt.json")

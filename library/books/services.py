@@ -28,8 +28,19 @@ def get_books_dict(repo: AbstractRepository):
     return services_books_dict
 
 
-def book_to_dict(book: Book):
+def get_prev_next_books(book_id: int, repo: AbstractRepository):
+    curr_book = repo.get_book(book_id)
 
+
+
+###################################
+
+# Book to Dict conversion
+
+###################################
+
+
+def book_to_dict(book: Book):
     authors = []
     if len(book.authors) > 0:
         for author in book.authors:

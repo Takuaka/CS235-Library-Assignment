@@ -45,3 +45,8 @@ class AbstractRepository(abc.ABC):
         """Returns a dictionary of all the books in the repo"""
 
         raise NotImplementedError
+
+    def get_prev_next_books(self, book_id: int):
+        """returns 2 values; the book ID's of the two books that come directly before and directly after the current book ID"""
+
+        raise NotImplementedError
