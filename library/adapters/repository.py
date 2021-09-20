@@ -31,22 +31,14 @@ class AbstractRepository(abc.ABC):
 
         raise NotImplementedError
 
+    @abc.abstractmethod
     def add_book(self, book: Book):
         """adds a book to the Repository"""
 
         raise NotImplementedError
 
-    def get_books_keys_list(self):
-        """Returns a list of all the book IDs of books in repo"""
-
-        raise NotImplementedError
-
-    def get_books_dict(self):
-        """Returns a dictionary of all the books in the repo"""
-
-        raise NotImplementedError
-
-    def get_prev_next_books(self, book_id: int):
+    @abc.abstractmethod
+    def get_prev_next_books_ids(self, book_id: int):
         """returns 2 values; the book ID's of the two books that come directly before and after the current book ID"""
 
         raise NotImplementedError

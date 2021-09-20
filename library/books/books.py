@@ -10,12 +10,10 @@ books_blueprint = Blueprint(
 
 @books_blueprint.route('/books', methods=['GET'])
 def books():
-    book_dict = services.get_books_dict(repo.repo_instance)
-    keys_list = services.get_keys_list(repo.repo_instance)
+    books_dict = services.get_book_dict(repo.repo_instance)
     return render_template(
         'books/books.html',
-        book_dict=book_dict,
-        keys_list=keys_list
+        books_dict=books_dict
     )
 
 

@@ -13,6 +13,10 @@ class MemoryRepository(AbstractRepository):
         self.__books = list()
         self.__books_index = dict()
 
+    @property
+    def books_list(self):
+        return self.__books
+
     def add_book(self, book: Book):
         if book not in self.__books:
             insort_left(self.__books, book)
@@ -41,13 +45,7 @@ class MemoryRepository(AbstractRepository):
             last_id = self.__books[-1].book_id
         return last_id
 
-    def get_books_keys_list(self):
-        return list(self.__books_index.keys())
-
-    def get_books_dict(self):
-        return self.__books_index
-
-    def get_prev_next_books(self, curr_book_id: int):
+    def get_prev_next_books_ids(self, curr_book_id: int):
         id_index = self.__books.index(self.get_book(curr_book_id))
         prev_book_id = None
         next_book_id = None

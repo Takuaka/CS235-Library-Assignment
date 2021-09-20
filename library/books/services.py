@@ -8,8 +8,12 @@ class NonExistentBookException(Exception):
     pass
 
 
-def get_keys_list(repo: AbstractRepository):
-    return repo.get_books_keys_list()
+def get_book_dict(repo: AbstractRepository):
+    book_list = repo.books_list
+    services_dict = dict()
+    for book in book_list:
+        services_dict[book.book_id] = book.title
+    return services_dict
 
 
 def get_book(book_id: int, repo: AbstractRepository):
@@ -20,16 +24,8 @@ def get_book(book_id: int, repo: AbstractRepository):
     return book_to_dict(book)
 
 
-def get_books_dict(repo: AbstractRepository):
-    services_books_dict = dict()
-    domain_books_dict = repo.get_books_dict()
-    for key in domain_books_dict.keys():
-        services_books_dict[key] = domain_books_dict[key].title
-    return services_books_dict
-
-
 def get_prev_next_books_ids(book_id: int, repo: AbstractRepository):
-    prev_book_id, next_book_id = repo.get_prev_next_books(book_id)
+    prev_book_id, next_book_id = repo.get_prev_next_books_ids(book_id)
     return prev_book_id, next_book_id
 
 
@@ -70,3 +66,6 @@ def book_to_dict(book: Book):
         'description': book.description
     }
     return book_dict
+
+def books_to_dict(books: Iterable[Book]):
+    return [book_to_dict(book) for book in books]

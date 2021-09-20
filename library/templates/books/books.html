@@ -4,13 +4,13 @@
         <tr>
             <th>Book ID</th><th>Book Title</th>
         </tr>
-        {% for key in keys_list %}
+        {% for key in books_dict %}
         <tr>
             <td>
                 <a href="{{url_for('books_bp.book_details',book_id=key)}}">{{key}}</a>
             </td>
             <td>
-                <a href ="{{url_for('books_bp.book_details',book_id=key)}}">{{book_dict[key]}}</a>
+                <a href ="{{url_for('books_bp.book_details',book_id=key)}}">{{books_dict[key]}}</a>
             </td>
         </tr>
         {% endfor %}
