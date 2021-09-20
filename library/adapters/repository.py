@@ -20,14 +20,14 @@ class AbstractRepository(abc.ABC):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def get_first_book(self):
-        """Returns Book with lowest id from Repository"""
+    def get_first_book_id(self):
+        """Returns lowest book_id from Repository"""
 
         raise NotImplementedError
 
     @abc.abstractmethod
-    def get_last_book(self):
-        """Returns Book with highest id from Repository"""
+    def get_last_book_id(self):
+        """Returns highest book_id from Repository"""
 
         raise NotImplementedError
 

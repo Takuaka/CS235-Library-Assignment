@@ -30,10 +30,15 @@ def get_books_dict(repo: AbstractRepository):
 
 # NOT TESTED
 
-def get_prev_next_books(book_id: int, repo: AbstractRepository):
-    curr_book = repo.get_book(book_id)
-    prev_book_id, next_book_id = repo.get_prev_next_books(curr_book)
+def get_prev_next_books_ids(book_id: int, repo: AbstractRepository):
+    prev_book_id, next_book_id = repo.get_prev_next_books(book_id)
     return prev_book_id, next_book_id
+
+
+def get_first_last_books_ids(repo: AbstractRepository):
+    first_id = repo.get_first_book_id()
+    last_id = repo.get_last_book_id()
+    return first_id, last_id
 
 
 ###################################

@@ -27,19 +27,19 @@ class MemoryRepository(AbstractRepository):
             pass
         return book
 
-    def get_first_book(self):
-        book = None
+    def get_first_book_id(self):
+        first_id = None
 
         if len(self.__books) > 0:
-            book = self.__books[0]
-        return book
+            first_id = self.__books[0].book_id
+        return first_id
 
-    def get_last_book(self):
-        book = None
+    def get_last_book_id(self):
+        last_id = None
 
         if len(self.__books) > 0:
-            book = self.__books[-1]
-        return book
+            last_id = self.__books[-1].book_id
+        return last_id
 
     def get_books_keys_list(self):
         return list(self.__books_index.keys())

@@ -10,16 +10,14 @@ def test_repository_can_get_book(in_memory_repo):
     assert book.title == "Skulduggery Pleasant"
 
 
-def test_repository_can_get_first_book(in_memory_repo):
-    book = in_memory_repo.get_first_book()
-    assert book.book_id == 1153
-    assert book.title == "The Amulet of Samarkand"
+def test_repository_can_get_first_book_id(in_memory_repo):
+    book_id = in_memory_repo.get_first_book_id()
+    assert book_id == 0
 
 
-def test_repository_can_get_last_book(in_memory_repo):
-    book = in_memory_repo.get_last_book()
-    assert book.book_id == 6431
-    assert book.title == "Storm Front"
+def test_repository_can_get_last_book_id(in_memory_repo):
+    book_id = in_memory_repo.get_last_book_id()
+    assert book_id == 6431
 
 
 def test_repository_can_add_book(in_memory_repo):
