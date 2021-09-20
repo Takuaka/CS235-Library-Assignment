@@ -35,3 +35,19 @@ def test_repository_returns_list_of_book_keys(in_memory_repo):
     keys_list = in_memory_repo.get_books_keys_list()
     assert 6431 in keys_list
     assert 1153 in keys_list
+
+
+def test_repository_returns_prev_and_next_ids(in_memory_repo):
+    prev_id, next_id = in_memory_repo.get_prev_next_books(1153)
+    assert prev_id == 0
+    assert next_id == 4432
+
+
+def test_repository_returns_none_when_required_prev_next_ids(in_memory_repo):
+    prev_none_id, next_id = in_memory_repo.get_prev_next_books(0)
+    prev_id, next_none_id = in_memory_repo.get_prev_next_books(6431)
+
+    assert prev_none_id is None
+    assert next_none_id is None
+    assert prev_id == 5251
+    assert next_id == 1153

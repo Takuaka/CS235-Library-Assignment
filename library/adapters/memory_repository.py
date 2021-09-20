@@ -49,16 +49,15 @@ class MemoryRepository(AbstractRepository):
 
     # NOT TESTED
 
-    def get_prev_next_books(self, book_id: int):
-        keys_list = self.get_books_keys_list()
-        id_index = keys_list.index(book_id)
+    def get_prev_next_books(self, curr_book_id: int):
+        id_index = self.__books.index(self.get_book(curr_book_id))
         prev_book_id = None
         next_book_id = None
 
         if id_index > 0:
-            prev_book_id = keys_list[id_index - 1]
-        if id_index < len(self.__books):
-            next_book_id = keys_list[id_index + 1]
+            prev_book_id = self.__books[id_index - 1].book_id
+        if id_index < (len(self.__books)-1):
+            next_book_id = self.__books[id_index + 1].book_id
         return prev_book_id, next_book_id
 
 
