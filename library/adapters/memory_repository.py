@@ -47,8 +47,6 @@ class MemoryRepository(AbstractRepository):
     def get_books_dict(self):
         return self.__books_index
 
-    # NOT TESTED
-
     def get_prev_next_books(self, curr_book_id: int):
         id_index = self.__books.index(self.get_book(curr_book_id))
         prev_book_id = None

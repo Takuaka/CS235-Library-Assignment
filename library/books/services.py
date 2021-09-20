@@ -28,8 +28,6 @@ def get_books_dict(repo: AbstractRepository):
     return services_books_dict
 
 
-# NOT TESTED
-
 def get_prev_next_books_ids(book_id: int, repo: AbstractRepository):
     prev_book_id, next_book_id = repo.get_prev_next_books(book_id)
     return prev_book_id, next_book_id

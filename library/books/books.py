@@ -22,11 +22,20 @@ def books():
 @books_blueprint.route('/book_details/<book_id>', methods=['GET'])
 def book_details(book_id):
     book = services.get_book(int(book_id), repo.repo_instance)
-    prev_book_id, next_book_id = services.get_prev_next_books(int(book_id), repo.repo_instance)
+    prev_book_id, next_book_id = services.get_prev_next_books_ids(int(book_id), repo.repo_instance)
+    first_id, last_id = services.get_first_last_books_ids(repo.repo_instance)
 
     prev_book_url = None
     next_book_url = None
+    first_book_url = None
+    last_book_url = None
 
+    if prev_book_id is not None:
+        prev_book_url = url_for('books_bp.book_details', book_id=prev_book_id)
+        first_book_url = url_for('books_bp.book_details', book_id=first_id)
+    if next_book_id is not None:
+        next_book_url = url_for('books_bp.book_details', book_id=next_book_id)
+        last_book_url = url_for('books_bp.book_details', book_id=last_id)
 
     authors = ""
     authors_num = len(book['authors'])
@@ -50,5 +59,8 @@ def book_details(book_id):
         publisher=book['publisher'],
         is_ebook=book['is_ebook'],
         description=book['description'],
-        authors_num=len(book['authors'])
+        first_book_url=first_book_url,
+        prev_book_url=prev_book_url,
+        next_book_url=next_book_url,
+        last_book_url=last_book_url
     )

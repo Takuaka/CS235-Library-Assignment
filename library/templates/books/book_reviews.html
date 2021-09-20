@@ -1,5 +1,12 @@
 {% extends 'layout.html' %} {% block content %}
 <main>
+    <div class="top_nav_left">
+        {% if first_article_url is not none %}
+        <button class="tnb" onclick="location.href='{{ first_article_url }}'">First</button>
+        {% else %}
+        <button class="tnbd" disabled>First</button>
+        {% endif %}
+    </div>
     <div class="book">
         <h1>{{ title }}</h1>
         <div id="other_info">
