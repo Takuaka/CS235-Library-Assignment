@@ -22,6 +22,11 @@ def books():
 @books_blueprint.route('/book_details/<book_id>', methods=['GET'])
 def book_details(book_id):
     book = services.get_book(int(book_id), repo.repo_instance)
+    prev_book_id, next_book_id = services.get_prev_next_books(int(book_id), repo.repo_instance)
+
+    prev_book_url = None
+    next_book_url = None
+
 
     authors = ""
     authors_num = len(book['authors'])
