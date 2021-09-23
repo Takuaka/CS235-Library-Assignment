@@ -1,16 +1,17 @@
 {% extends 'layout.html' %} {% block content %}
 <main>
-    <table>
+    <h1>List of Books</h1>
+    <table align="center">
         <tr>
             <th>Book ID</th><th>Book Title</th>
         </tr>
         {% for key in books_dict %}
-        <tr>
+        <tr onclick="location.href='{{ url_for('books_bp.book_details',book_id=key) }}'">
             <td>
-                <a href="{{url_for('books_bp.book_details',book_id=key)}}">{{key}}</a>
+                {{key}}
             </td>
             <td>
-                <a href ="{{url_for('books_bp.book_details',book_id=key)}}">{{books_dict[key]}}</a>
+                {{books_dict[key]}}
             </td>
         </tr>
         {% endfor %}

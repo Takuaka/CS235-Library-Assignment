@@ -7,8 +7,6 @@
     padding: 0;
     border: 0;
     outline:0;
-    font-family:
-    font-size: large;
 }
 
 h1 {
@@ -17,6 +15,10 @@ h1 {
     font-size: 500%;
     font-family: "Open Sans", sans-serif;
     font-style: italic;
+}
+
+#book_title {
+    font-size: 300%;
 }
 
 html, body {
@@ -34,9 +36,10 @@ html, body {
 
 #nav {
     height: inherit;
+    width: 10%;
     float: left;
     background-color: rgba(0,249,33,1);
-    align: center;
+    text-align: center;
 }
 
 .btn-nav {
@@ -45,4 +48,25 @@ html, body {
 
 p{
     font-family: "Open Sans", sans-serif;
+    font-size: 150%;
+}
+
+#container {
+    text-align: center;
+}
+
+table {
+    height:100%;
+    width:inherit;
+    font-size: 150%;
+}
+
+td {
+    cursor: pointer;
+}
+
+h4 {
+    font-size: 150%;
+    font-family: "Open Sans", sans-serif;
+    font-style: oblique;
 }

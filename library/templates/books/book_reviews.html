@@ -1,5 +1,6 @@
 {% extends 'layout.html' %} {% block content %}
 <main>
+    <h1 id="book_title">{{ title }}</h1>
     <div class="top_nav_left">
 
         {% if first_book_url is not none %}
@@ -30,7 +31,6 @@
 
     </div>
     <div class="book">
-        <h1>{{ title }}</h1>
         <div id="other_info">
             <p>Book ID: {{ book_id }}</p>
 
