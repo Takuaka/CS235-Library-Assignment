@@ -66,6 +66,15 @@ class MemoryRepository(AbstractRepository):
             insort_left(self.__authors, author)
             self.__authors_index[author.unique_id] = author
 
+    def get_author(self, author_id: int):
+        author = None
+
+        try:
+            author = self.__authors_index[author_id]
+        except KeyError:
+            pass
+        return author
+
 
 def load_books(data_path: Path, repo: MemoryRepository):
     books_filename = str(data_path / "comic_books_excerpt.json")
@@ -75,6 +84,9 @@ def load_books(data_path: Path, repo: MemoryRepository):
     for book in books.dataset_of_books:
         for author in book.authors:
             repo.add_author(author)
+            for coauthor in book.authors:
+                if coauthor != author:
+                    author.add_coauthor(coauthor)
         repo.add_book(book)
 
 

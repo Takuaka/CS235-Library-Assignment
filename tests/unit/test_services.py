@@ -28,13 +28,13 @@ def test_book_to_dict_conditionals(in_memory_repo):
 
 def test_get_prev_next_book_ids(in_memory_repo):
     prev_id, next_id = services.get_prev_next_books_ids(1153, in_memory_repo)
-    assert prev_id == 0
+    assert prev_id == 666
     assert next_id == 4432
 
 
 def test_get_prev_next_book_ids_return_none_when_required(in_memory_repo):
     prev_zero_id, next_id = services.get_prev_next_books_ids(0, in_memory_repo)
-    assert next_id == 1153
+    assert next_id == 666
     assert prev_zero_id is None
 
     prev_id, next_zero_id = services.get_prev_next_books_ids(6431, in_memory_repo)
