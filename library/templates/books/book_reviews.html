@@ -1,20 +1,33 @@
 {% extends 'layout.html' %} {% block content %}
 <main>
     <div class="top_nav_left">
-        {% if prev_article_url is not none %}
-        <button class="tnb" onclick="location.href='{{ first_article_url }}'">First</button>
-        <button class="tnb" onclick="location.href='{{ prev_article_url }}'">Previous</button>
+
+        {% if first_book_url is not none %}
+            <button class="tnb" onclick="location.href='{{ first_book_url }}'">First</button>
         {% else %}
-        <button class="tnbd" disabled>First</button>
-        <button class="tnbd" disabled>Prev</button>
+            <button class="tnbd" disabled>First</button>
         {% endif %}
-        {% if next_article_url is not none %}
-        <button class="tnb" onclick="location.href='{{ next_article_url }}'">Next</button>
-        <button class="tnb" onclick="location.href='{{ prev_article_url }}'">Last</button>
+
+        {% if prev_book_url is not none %}
+            <button class="tnb" onclick="location.href='{{ prev_book_url }}'">Previous</button>
         {% else %}
-        <button class="tnbd" disabled>Next</button>
-        <button class="tnbd" disabled>Last</button>
+            <button class="tnbd" disabled>Prev</button>
         {% endif %}
+
+    </div>
+    <div class="top_nav_right">
+
+        {% if next_book_url is not none %}
+            <button class="tnb" onclick="location.href='{{ next_book_url }}'">Next</button>
+        {% else %}
+            <button class="tnbd" disabled>Next</button>
+        {% endif %}
+        {% if last_book_url is not none %}
+            <button class="tnb" onclick="location.href='{{ last_book_url }}'">Last</button>
+        {% else %}
+            <button class="tnbd" disabled>Last</button>
+        {% endif %}
+
     </div>
     <div class="book">
         <h1>{{ title }}</h1>

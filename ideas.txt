@@ -1,8 +1,8 @@
 Ok this has all my current ideas that I want to add:
 
-able to move between books in the books_details page
+able to move between books in the books_details page-DONE
 
-able to go to first and last books in the books_details page
+able to go to first and last books in the books_details page-DONE
 
 styling
 
