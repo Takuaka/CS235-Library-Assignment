@@ -7,7 +7,7 @@ Just adding some notes here for the marker.
 
 - The requirements.txt has a whole bunch of requirements added to it. I had done it when adding Flask (I think?) accidentally, and I didn't know which ones I can remove safely. I've left them all there; sorry for the inconvenience. I've separated the ones that I know I use in this project from the others.
 - I did the CSS quite late; It looks good on my side, but it may look weird on a smaller screen. Sorry. 
-- The last commit that will have a fully functional web_application is commited some time just after 1am on 24/09/2021. Putting this here because I'm gonna start doing the back end for a B Grade, on the off chance that doing this will break what I currently have. I will be double checking everything as I go along though, so hopefully nothing insane happens. 
+- The last commit that will have a fully functional web_application is commited some time just after 1:19am on 24/09/2021. Putting this here because I'm gonna start doing the back end for a B Grade, on the off chance that doing this will break what I currently have. I will be double checking everything as I go along though, so hopefully nothing insane happens. 
 
 ## Python version
 

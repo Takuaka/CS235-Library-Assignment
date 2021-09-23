@@ -40,3 +40,8 @@ def test_get_prev_next_book_ids_return_none_when_required(in_memory_repo):
     prev_id, next_zero_id = services.get_prev_next_books_ids(6431, in_memory_repo)
     assert prev_id == 5251
     assert next_zero_id is None
+
+
+def test_get_book_dict(in_memory_repo):
+    test_dict = services.get_book_dict(in_memory_repo)
+    assert test_dict[6431] == "Storm Front"

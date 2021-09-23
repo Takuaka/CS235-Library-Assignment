@@ -4,6 +4,11 @@ from library.domain.model import Publisher, Author, Book
 from library.adapters.repository import RepositoryException
 
 
+def test_repository_returns_list_of_books(in_memory_repo):
+    test_list = in_memory_repo.books_list
+    assert test_list[0].book_id == 0
+
+
 def test_repository_can_get_book(in_memory_repo):
     book = in_memory_repo.get_book(5251)
     assert book.book_id == 5251
@@ -45,3 +50,6 @@ def test_repository_returns_none_when_required_prev_next_ids(in_memory_repo):
     assert next_none_id is None
     assert prev_id == 5251
     assert next_id == 1153
+
+# author stuff
+

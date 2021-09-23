@@ -42,3 +42,9 @@ class AbstractRepository(abc.ABC):
         """returns 2 values; the book ID's of the two books that come directly before and after the current book ID"""
 
         raise NotImplementedError
+
+    @abc.abstractmethod
+    def add_author(self, author: Author):
+        """Adds an author object to the Repository"""
+
+        raise NotImplementedError

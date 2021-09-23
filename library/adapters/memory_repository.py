@@ -12,6 +12,9 @@ class MemoryRepository(AbstractRepository):
     def __init__(self):
         self.__books = list()
         self.__books_index = dict()
+        # not tested
+        self.__authors = list()
+        self.__authors_index = dict()
 
     @property
     def books_list(self):
@@ -56,6 +59,13 @@ class MemoryRepository(AbstractRepository):
             next_book_id = self.__books[id_index + 1].book_id
         return prev_book_id, next_book_id
 
+    # Not tested
+
+    def add_author(self, author: Author):
+        if author not in self.__authors:
+            insort_left(self.__authors, author)
+            self.__authors_index[author.unique_id] = author
+
 
 def load_books(data_path: Path, repo: MemoryRepository):
     books_filename = str(data_path / "comic_books_excerpt.json")
@@ -63,6 +73,8 @@ def load_books(data_path: Path, repo: MemoryRepository):
     books = BooksJSONReader(books_filename, authors_filename)
     books.read_json_files()
     for book in books.dataset_of_books:
+        for author in book.authors:
+            repo.add_author(author)
         repo.add_book(book)
 
 
