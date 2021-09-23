@@ -10,12 +10,6 @@ styling
 
 The ideas above require:
 
-buttons that act as hyperlinks (follow the articles page on CWA; use first/last_article_url for this)
-
-able to get the book_ids of the previous and next books in the books dict(use keys_list.index(prev_id/next_id) to generate URLs for the buttons)
-
-Might also have one for books list
-
 CSS
 
 _______________________________
