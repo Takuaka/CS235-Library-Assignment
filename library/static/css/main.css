@@ -10,16 +10,15 @@
 }
 
 h1 {
-    margin-top: 0;
+    margin: 0;
+    padding: 0;
     text-align: center;
     font-size: 500%;
     font-family: "Open Sans", sans-serif;
     font-style: italic;
 }
 
-#book_title {
-    font-size: 300%;
-}
+#book_title { font-size: 300%; }
 
 html, body {
     margin: 0px;
@@ -30,6 +29,7 @@ html, body {
 }
 
 #body{
+    margin: 0;
     height: 100%;
     background-color: rgba(76,255,112,0.4);
 }
@@ -42,31 +42,47 @@ html, body {
     text-align: center;
 }
 
-.btn-nav {
-    font-size: large;
-}
-
 p{
     font-family: "Open Sans", sans-serif;
     font-size: 150%;
 }
 
-#container {
-    text-align: center;
-}
+#container { text-align: center; }
 
 table {
     height:100%;
     width:inherit;
     font-size: 150%;
+    font-family: "Open Sans", sans-serif;
 }
 
-td {
-    cursor: pointer;
-}
+td { cursor: pointer; }
 
 h4 {
     font-size: 150%;
     font-family: "Open Sans", sans-serif;
     font-style: oblique;
 }
+
+.btn-nav {
+    font-size: large;
+    padding: 10px;
+    color: rgba(0, 142, 255, 1);
+    display: block;
+    font-family: "Open Sans", sans-serif;
+}
+
+.btn-nav:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 255, 1);
+    font-style: italic;
+}
+
+tr:hover {
+    background-color: rgba(255,255,255,0.4);
+}
+
+tr:first-child:hover{
+    background-color: rgba(255,255,255,0);
+}
+
