@@ -47,7 +47,9 @@ p{
     font-size: 150%;
 }
 
-#container { text-align: center; }
+#container {
+    text-align: center;
+}
 
 table {
     height:100%;
@@ -70,6 +72,7 @@ h4 {
     color: rgba(0, 142, 255, 1);
     display: block;
     font-family: "Open Sans", sans-serif;
+    text-decoration: none;
 }
 
 .btn-nav:hover {
@@ -84,5 +87,30 @@ tr:hover {
 
 tr:first-child:hover{
     background-color: rgba(255,255,255,0);
+}
+
+.top_nav{height:40px; padding: 10px;}
+
+.top_nav_left, .top_nav_right { display: inline; }
+
+.top_nav_left {float: left;}
+.top_nav_right {float: right;}
+
+.book {
+    display: flex;
+    Text-align: left;
+    padding: 10px;
+}
+
+#other_info {
+    flex: 1;
+    font-size: 80%;
+    font-style: italic;
+}
+#Description { flex: 4; }
+
+.tnb, .tnbd {
+    font-size: 20px;
+    padding: 10px 24px;
 }
 

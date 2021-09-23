@@ -1,34 +1,36 @@
 {% extends 'layout.html' %} {% block content %}
 <main>
     <h1 id="book_title">{{ title }}</h1>
-    <div class="top_nav_left">
+    <div class="top_nav">
+        <div class="top_nav_left">
 
-        {% if first_book_url is not none %}
-            <button class="tnb" onclick="location.href='{{ first_book_url }}'">First</button>
-        {% else %}
-            <button class="tnbd" disabled>First</button>
-        {% endif %}
+            {% if first_book_url is not none %}
+                <button class="tnb" onclick="location.href='{{ first_book_url }}'">First</button>
+            {% else %}
+                <button class="tnbd" disabled>First</button>
+            {% endif %}
 
-        {% if prev_book_url is not none %}
-            <button class="tnb" onclick="location.href='{{ prev_book_url }}'">Previous</button>
-        {% else %}
-            <button class="tnbd" disabled>Prev</button>
-        {% endif %}
+            {% if prev_book_url is not none %}
+                <button class="tnb" onclick="location.href='{{ prev_book_url }}'">Previous</button>
+            {% else %}
+                <button class="tnbd" disabled>Prev</button>
+            {% endif %}
 
-    </div>
-    <div class="top_nav_right">
+        </div>
+        <div class="top_nav_right">
 
-        {% if next_book_url is not none %}
-            <button class="tnb" onclick="location.href='{{ next_book_url }}'">Next</button>
-        {% else %}
-            <button class="tnbd" disabled>Next</button>
-        {% endif %}
-        {% if last_book_url is not none %}
-            <button class="tnb" onclick="location.href='{{ last_book_url }}'">Last</button>
-        {% else %}
-            <button class="tnbd" disabled>Last</button>
-        {% endif %}
+            {% if next_book_url is not none %}
+                <button class="tnb" onclick="location.href='{{ next_book_url }}'">Next</button>
+            {% else %}
+                <button class="tnbd" disabled>Next</button>
+            {% endif %}
+            {% if last_book_url is not none %}
+                <button class="tnb" onclick="location.href='{{ last_book_url }}'">Last</button>
+            {% else %}
+                <button class="tnbd" disabled>Last</button>
+            {% endif %}
 
+        </div>
     </div>
     <div class="book">
         <div id="other_info">
@@ -47,9 +49,9 @@
         <div id="Description">
             <p>{{ description }}</p>
         </div>
-        <div id="reviews">
-            <p>reviews placeholder</p>
-        </div>
+    </div>
+    <div id="reviews">
+        <p>reviews placeholder</p>
     </div>
 </main>
 
