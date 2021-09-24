@@ -48,3 +48,9 @@ class AbstractRepository(abc.ABC):
         """Adds an author object to the Repository"""
 
         raise NotImplementedError
+
+    @abc.abstractmethod
+    def get_author(self, author_id:int):
+        """returns an author object to the Repository"""
+
+        raise NotImplementedError
