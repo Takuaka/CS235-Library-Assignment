@@ -24,3 +24,17 @@ def test_book_details(client):
     assert b'Book ID: 4432' in response.data
     assert b'Not available as eBook' in response.data
     assert b'Page number: 297' in response.data
+
+
+def test_authors(client):
+    response = client.get('/authors')
+    assert response.status_code == 200
+    assert b'Author ID' in response.data
+    assert b'Author Name' in response.data
+
+
+def test_author_books(client):
+    response = client.get('/author_books/4200')
+    assert response.status_code == 200
+    assert b'Terry Pratchett' in response.data
+    assert b'Good Omens' in response.data

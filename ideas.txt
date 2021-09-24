@@ -4,19 +4,13 @@ able to move between books in the books_details page-DONE
 
 able to go to first and last books in the books_details page-DONE
 
-styling
+styling-DONE
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The ideas above require:
-
-CSS
-
-_______________________________
+_________________________________________________________________________
 
 These ideas require more study of the CWA:
 
-Able to view books by authors
+Able to view books by authors-DONE
 
 adding Users
 
@@ -29,8 +23,6 @@ Able to add reviews on the book details tab
 setting the max amount of books viewed in the book page (currently shows max which is 20; might leave at 20 or lower to 10 per books page)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Currently Authors are simply an attribute to Book class; need a separate place for them to stay in Memory Repo
 
 Domain model for Users and Reviews is done and testing works for them, now need to add them to Repository (Currently not in there) and add testing for them in Memory Repo
 
