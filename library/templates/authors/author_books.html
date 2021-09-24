@@ -1,0 +1,21 @@
+{% extends 'layout.html' %} {% block content %}
+<main>
+    <h1>{{ author_name }}</h1>
+    <table align="center">
+        <tr>
+            <th>Book ID</th><th>Book Title</th>
+        </tr>
+        {% for book in books %}
+        <tr onclick="location.href='{{ url_for('books_bp.book_details',book_id=book['book_id']) }}'">
+            <td>
+                {{ book['book_id'] }}
+            </td>
+            <td>
+                {{ book['title'] }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</main>
+
+{% endblock %}
