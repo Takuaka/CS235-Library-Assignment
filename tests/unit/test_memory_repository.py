@@ -65,3 +65,8 @@ def test_repository_correctly_adds_coauthors(in_memory_repo):
     assert author1.check_if_this_author_coauthored_with(author2)
     assert author2.check_if_this_author_coauthored_with(author1)
     assert author1.check_if_this_author_coauthored_with(author1) is False
+
+
+def test_repository_correctly_adds_book(in_memory_repo):
+    author1 = in_memory_repo.get_author(1425)
+    assert 4432 in author1.books

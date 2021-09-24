@@ -20,6 +20,10 @@ class MemoryRepository(AbstractRepository):
     def books_list(self):
         return self.__books
 
+    @property
+    def authors_list(self):
+        return self.__authors
+
     def add_book(self, book: Book):
         if book not in self.__books:
             insort_left(self.__books, book)
@@ -84,6 +88,7 @@ def load_books(data_path: Path, repo: MemoryRepository):
     for book in books.dataset_of_books:
         for author in book.authors:
             repo.add_author(author)
+            author.add_book(book)
             for coauthor in book.authors:
                 if coauthor != author:
                     author.add_coauthor(coauthor)
