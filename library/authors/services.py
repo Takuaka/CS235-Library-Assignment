@@ -39,7 +39,7 @@ def author_to_dict(author: Author):
     coauthors = []
     if len(author.coauthors) > 0:
         for coauthor in author.coauthors:
-            coauthors.append(coauthor)
+            coauthors.append(coauthor.unique_id)
 
     author_dict = {
         'author_full_name': author.full_name,
@@ -48,4 +48,3 @@ def author_to_dict(author: Author):
         'coauthors': coauthors
     }
     return author_dict
-
