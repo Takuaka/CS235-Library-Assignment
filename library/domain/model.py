@@ -98,7 +98,7 @@ class Author:
     # not tested ____________________________________
 
     def add_book(self, book):
-        if book.book_id not in self.__books:
+        if isinstance(book, Book) and book.book_id not in self.__books:
             self.__books.add(book.book_id)
 
     def remove_book(self, book):

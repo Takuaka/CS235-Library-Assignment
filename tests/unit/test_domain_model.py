@@ -161,6 +161,21 @@ class TestAuthor:
         with pytest.raises(AttributeError):
             author1.unique_id = 12
 
+    # extra test
+
+    def test_author_add_and_remove_book(self):
+        author1 = Author(9451, "Rick Riordan")
+        assert author1.books == set()
+        book1 = Book(5123, "The Lightning Thief")
+        author1.add_book(book1)
+        author1.add_book(book1)
+        assert book1.book_id in author1.books
+        assert len(author1.books) == 1
+        author1.remove_book(book1)
+        assert author1.books == set()
+        author1.add_book(7)
+        assert author1.books == set()
+
 
 class TestBook:
 
