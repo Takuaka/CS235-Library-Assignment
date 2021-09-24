@@ -63,8 +63,6 @@ class MemoryRepository(AbstractRepository):
             next_book_id = self.__books[id_index + 1].book_id
         return prev_book_id, next_book_id
 
-    # Not tested
-
     def add_author(self, author: Author):
         if author not in self.__authors:
             insort_left(self.__authors, author)

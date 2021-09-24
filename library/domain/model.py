@@ -54,11 +54,7 @@ class Author:
         # We use a set so each unique author is only represented once.
         self.__authors_this_one_has_worked_with = set()
 
-        # new property _______________
-
         self.__books = set()
-
-        # _____________________________
 
     @property
     def unique_id(self) -> int:
@@ -80,13 +76,13 @@ class Author:
         else:
             raise ValueError
 
-    # new property ______________
-
     @property
     def books(self):
         return self.__books
 
-    # ____________________________
+    @property
+    def coauthors(self):
+        return self.__authors_this_one_has_worked_with
 
     def add_coauthor(self, coauthor):
         if isinstance(coauthor, self.__class__) and coauthor.unique_id != self.unique_id:
@@ -95,8 +91,6 @@ class Author:
     def check_if_this_author_coauthored_with(self, author):
         return author in self.__authors_this_one_has_worked_with
 
-    # not tested ____________________________________
-
     def add_book(self, book):
         if isinstance(book, Book) and book.book_id not in self.__books:
             self.__books.add(book.book_id)
@@ -104,8 +98,6 @@ class Author:
     def remove_book(self, book):
         if book.book_id in self.__books:
             self.__books.remove(book.book_id)
-
-    # end not tested _______________________________
 
     def __repr__(self):
         return f'<Author {self.full_name}, author id = {self.unique_id}>'
