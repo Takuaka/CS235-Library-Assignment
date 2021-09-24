@@ -6,7 +6,7 @@
             <th>Author ID</th><th>Author Name</th>
         </tr>
         {% for key in authors_dict %}
-        <tr onclick="location.href='{{ url_for('books_bp.author_books',author_id=key) }}'">
+        <tr onclick="location.href='{{ url_for('authors_bp.author_books',author_id=key) }}'">
             <td>
                 {{key}}
             </td>
