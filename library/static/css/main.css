@@ -114,3 +114,6 @@ tr:first-child:hover{
     padding: 10px 24px;
 }
 
+#authors_table {
+    font-size: 110%;
+}
