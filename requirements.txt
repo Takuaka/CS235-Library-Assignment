@@ -2,6 +2,7 @@ pytest~=5.4.3
 Flask==1.1.4
 python-dotenv~=0.13.0
 Jinja2~=2.11.2
+SQLALchemy==1.4.23
 
 py~=1.8.1
 colorama~=0.4.3
