@@ -12,15 +12,16 @@ TEST_DATA_PATH = get_project_root() / "tests" / "data"
 @pytest.fixture
 def in_memory_repo():
     repo = MemoryRepository()
-    memory_repository.populate(TEST_DATA_PATH, repo)
+    memory_repository.populate(TEST_DATA_PATH, repo, database_mode)
     return repo
 
 
 @pytest.fixture
 def client():
     my_app = create_app({
-         'TESTING': True,
-         'TEST_DATA_PATH': TEST_DATA_PATH,
+        'TESTING': True,
+        'REPOSITORY': 'memory',
+        'TEST_DATA_PATH': TEST_DATA_PATH,
         # 'WTF_CSRF_ENABLED': False
     })
 
