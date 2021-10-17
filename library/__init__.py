@@ -70,14 +70,16 @@ def create_app(test_config=None):
 
         # These are for the database repo; not for the memory repo
 
-        @app.before_request
-        def before_flask_http_request_function():
-            if isinstance(repo.repo_instance, database_repository.SqlAlchemyRepository):
-                repo.repo_instance.reset_session()
+        if app.config['REPOSITORY'] == 'database':
 
-        @app.teardown_appcontext
-        def shutdown_session(exception=None):
-            if isinstance(repo.repo_instance, database_repository.SqlAlchemyRepository):
-                repo.repo_instance.close_session()
+            @app.before_request
+            def before_flask_http_request_function():
+                if isinstance(repo.repo_instance, database_repository.SqlAlchemyRepository):
+                    repo.repo_instance.reset_session()
+
+            @app.teardown_appcontext
+            def shutdown_session(exception=None):
+                if isinstance(repo.repo_instance, database_repository.SqlAlchemyRepository):
+                    repo.repo_instance.close_session()
 
     return app
