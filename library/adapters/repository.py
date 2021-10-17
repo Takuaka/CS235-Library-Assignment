@@ -55,14 +55,12 @@ class AbstractRepository(abc.ABC):
 
         raise NotImplementedError
 
-    @property
     @abc.abstractmethod
     def books_list(self):
         """Returns list of books in Repository"""
 
         raise NotImplementedError
 
-    @property
     @abc.abstractmethod
     def authors_list(self):
         """Returns list of authors in Repository"""

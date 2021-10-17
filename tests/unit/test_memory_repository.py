@@ -5,7 +5,7 @@ from library.adapters.repository import RepositoryException
 
 
 def test_repository_returns_list_of_books(in_memory_repo):
-    test_list = in_memory_repo.books_list
+    test_list = in_memory_repo.books_list()
     assert test_list[0].book_id == 0
 
 

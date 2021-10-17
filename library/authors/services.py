@@ -9,7 +9,7 @@ class NonExistentAuthorException(Exception):
 
 
 def get_author_dict(repo: AbstractRepository):
-    author_list = repo.authors_list
+    author_list = repo.authors_list()
     services_dict = dict()
     for author in author_list:
         services_dict[author.unique_id] = author.full_name

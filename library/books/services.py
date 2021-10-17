@@ -9,7 +9,7 @@ class NonExistentBookException(Exception):
 
 
 def get_book_dict(repo: AbstractRepository):
-    book_list = repo.books_list
+    book_list = repo.books_list()
     services_dict = dict()
     for book in book_list:
         services_dict[book.book_id] = book.title

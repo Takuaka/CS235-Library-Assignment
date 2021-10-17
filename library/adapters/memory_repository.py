@@ -16,11 +16,9 @@ class MemoryRepository(AbstractRepository):
         self.__authors = list()
         self.__authors_index = dict()
 
-    @property
     def books_list(self):
         return self.__books
 
-    @property
     def authors_list(self):
         return self.__authors
 
