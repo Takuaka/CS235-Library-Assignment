@@ -28,7 +28,7 @@ def create_app(test_config=None):
     if app.config['REPOSITORY'] == 'memory':
         repo.repo_instance = memory_repository.MemoryRepository()
         database_mode = False
-        repository_populate.populate(data_path, repo.repo_instance, database_mode)
+        repository_populate.populate(data_path, repo.repo_instance)
 
     elif app.config['REPOSITORY'] == 'database':
         database_uri = app.config['SQLALCHEMY_DATABASE_URI']
@@ -52,7 +52,7 @@ def create_app(test_config=None):
             map_model_to_tables()
 
             database_mode = True
-            repository_populate.populate(data_path, repo.repo_instance, database_mode)
+            repository_populate.populate(data_path, repo.repo_instance)
             print("REPOPULATING DATABASE... FINISHED")
 
         else:

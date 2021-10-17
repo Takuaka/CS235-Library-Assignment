@@ -11,8 +11,7 @@ TEST_DATA_PATH = get_project_root() / "tests" / "data"
 @pytest.fixture
 def in_memory_repo():
     repo = memory_repository.MemoryRepository()
-    database_mode = False
-    repository_populate.populate(TEST_DATA_PATH, repo, database_mode)
+    repository_populate.populate(TEST_DATA_PATH, repo)
     return repo
 
 

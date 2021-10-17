@@ -4,11 +4,11 @@ from library.adapters.repository import AbstractRepository
 from library.adapters.jsondatareader import BooksJSONReader
 
 
-def populate(data_path: Path, repo: AbstractRepository, database_mode: bool):
-    load_books(data_path, repo, database_mode)
+def populate(data_path: Path, repo: AbstractRepository):
+    load_books(data_path, repo)
 
 
-def load_books(data_path: Path, repo: AbstractRepository, database_mode: bool):
+def load_books(data_path: Path, repo: AbstractRepository):
     books_filename = str(data_path / "comic_books_excerpt.json")
     authors_filename = str(data_path / "book_authors_excerpt.json")
     books = BooksJSONReader(books_filename, authors_filename)
