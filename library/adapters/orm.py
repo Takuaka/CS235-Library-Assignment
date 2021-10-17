@@ -54,3 +54,13 @@ def map_model_to_tables():
         '_Author__name': author_table.c.name,
         '_Author__id': author_table.c.id
     })
+
+    mapper(model.Book, books_table, properties={
+        '_Book__title': books_table.c.book_title,
+        '_Book__id': books_table.c.id,
+        '_Book__release_year': books_table.c.release_year,
+        '_Book__publisher': books_table.c.publisher,
+        '_Book__ebook': books_table.c.ebook,
+        '_Book__num_pages': books_table.c.num_pages,
+        '_Book__description': books_table.c.description
+    })
