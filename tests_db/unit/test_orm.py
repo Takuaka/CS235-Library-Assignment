@@ -57,3 +57,25 @@ def make_publisher():
     publisher = Publisher("HarperCollins")
 
     return publisher
+
+
+def test_loading_of_book(empty_session):
+    book_key = insert_book(empty_session)
+    expected_book = make_book()
+    fetched_book = empty_session.query(Book).one()
+
+    assert expected_book == fetched_book
+    assert book_key == fetched_book.book_id
+
+
+def test_loading_of_book_with_author_association(empty_session):
+    book_key = insert_book(empty_session)
+    author_keys = [insert_author(empty_session)]
+    insert_book_author_associations(empty_session, book_key, author_keys)
+
+    book = empty_session.query(Book).get(book_key)
+    authors = [empty_session.query(Author).get(key) for key in author_keys]
+
+    for author in authors:
+        assert author in book.authors
+        assert book in author.books
